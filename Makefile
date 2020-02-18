@@ -14,7 +14,7 @@ all: build
 .PHONY: build
 
 build: test
-	docker image build -t $(APPNAME):dev $(BASEDIR)
+	docker image build --tag $(APPNAME):dev $(BASEDIR)
 
 ################################################################################
 .PHONY: release
@@ -32,7 +32,7 @@ test:
 .PHONY: run
 
 run: build
-	docker container run -it $(APPNAME):dev
+	docker container run --interactive --tty $(APPNAME):dev
 
 ################################################################################
 .PHONY: clean
