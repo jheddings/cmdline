@@ -1,7 +1,5 @@
 FROM debian:buster
 
-# TODO install vim
-# TODO install zsh
-# TODO clone homedir repo into container
+COPY Welcome.txt /etc/motd
 
-CMD ["/bin/sh"]
+CMD cat /etc/motd ; /bin/sh
