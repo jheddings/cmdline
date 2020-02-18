@@ -20,8 +20,8 @@ build: test
 .PHONY: release
 
 release: build
-	docker tag $(APPNAME):dev $(APPNAME):latest
-	docker tag $(APPNAME):latest $(APPNAME):$(APPVER)
+	docker image tag $(APPNAME):dev $(APPNAME):latest
+	docker image tag $(APPNAME):latest $(APPNAME):$(APPVER)
 
 ################################################################################
 .PHONY: test
