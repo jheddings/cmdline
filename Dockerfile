@@ -1,6 +1,7 @@
 FROM debian:buster
 
-# TODO add zsh
+# TODO install vim
+# TODO install zsh
 # TODO clone homedir repo into container
 
 CMD ["/bin/sh"]
