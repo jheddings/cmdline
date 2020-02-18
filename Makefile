@@ -32,7 +32,7 @@ test:
 .PHONY: run
 
 run: build
-	docker container run --interactive --tty $(APPNAME):dev
+	docker container run --interactive --tty --rm $(APPNAME):dev
 
 ################################################################################
 .PHONY: clean
