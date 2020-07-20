@@ -1,0 +1,13 @@
+# basic bashrc file for docker shell...
+set -o vi
+
+# runtinme environment variables...
+export TERM='xterm-color'
+export PS1='\h:\w\$ '
+
+# setup 'ls'
+alias l='/bin/ls -hF'
+alias ll='l -l'
+alias la='l -a'
+alias lla='l -la'
+

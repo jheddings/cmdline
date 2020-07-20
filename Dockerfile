@@ -7,12 +7,10 @@ RUN apt-get update && \
   apt-get autoremove --assume-yes && \
   apt-get clean
 
-# just because we can...
-COPY Welcome.txt /etc/motd
-
-# runtinme environment variables...
-ENV TERM=xterm-color
-ENV PS1="%m:%~%# "
+# customize the environment a bit...
+COPY etc/Welcome.txt /etc/motd
+COPY etc/zshrc /root/.zshrc
+COPY etc/bashrc /root/.bashrc
 
 WORKDIR "/root"
 
