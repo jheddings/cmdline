@@ -32,7 +32,10 @@ test:
 .PHONY: run
 
 run: build
-	docker container run --interactive --tty --rm $(APPNAME):dev
+	docker container run --rm --interactive --tty \
+		--volume "$$HOME":"/mnt/host/home" \
+		--volume "/":"/mnt/host/files" \
+		"$(APPNAME):dev"
 
 ################################################################################
 .PHONY: clean
