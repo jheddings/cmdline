@@ -1,9 +1,9 @@
-# Makefile for docker-shell
+# Makefile for cmdline
 
 BASEDIR ?= $(PWD)
 
-APPNAME ?= docker-shell
-APPVER ?= 1.0
+APPNAME ?= cmdline
+APPVER ?= 2.0
 
 ################################################################################
 .PHONY: all
