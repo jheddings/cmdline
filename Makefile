@@ -9,6 +9,11 @@ APPVER ?= 2.2
 all: build
 
 
+.PHONY: buildx
+buildx:
+	docker buildx create --use --name $(APPNAME)-buildx
+
+
 .PHONY: build
 build:
 	docker image build --tag $(APPNAME):dev $(BASEDIR)
@@ -21,10 +26,11 @@ run: build
 
 .PHONY: publish
 publish: build
-	docker image tag "$(APPNAME):dev" "jheddings/$(APPNAME):latest"
-	docker push "jheddings/$(APPNAME):latest"
-	docker image tag "jheddings/$(APPNAME):latest" "jheddings/$(APPNAME):$(APPVER)"
-	docker push "jheddings/$(APPNAME):$(APPVER)"
+	docker buildx build --push \
+		--platform linux/amd64,linux/arm64 \
+		--tag "jheddings/$(APPNAME):$(APPVER)" \
+		--tag "jheddings/$(APPNAME):latest" \
+		"$(BASEDIR)"
 
 
 .PHONY: release
