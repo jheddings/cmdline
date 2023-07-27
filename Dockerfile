@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:bookworm
 
 # some additional packages that are handy...
 RUN apt-get update && \
