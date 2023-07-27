@@ -1,0 +1,94 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "enabled": true,
+
+    "labels": [
+        "dependencies",
+        "renovate"
+    ],
+
+    "docker": {
+        "addLabels": [
+            "dep:docker"
+        ],
+        "enabled": true
+    },
+    "github-actions": {
+        "addLabels": [
+            "dep:gh-actions"
+        ],
+        "enabled": true
+    },
+    "golang": {
+        "addLabels": [
+            "dep:golang"
+        ],
+        "enabled": true
+    },
+    "kubernetes": {
+        "addLabels": [
+            "dep:k8s"
+        ]
+    },
+    "java": {
+        "addLabels": [
+            "dep:java"
+        ],
+        "enabled": true
+    },
+    "js": {
+        "addLabels": [
+            "dep:js"
+        ],
+        "enabled": true
+    },
+    "lockFileMaintenance": {
+        "enabled": true,
+        "automerge": true
+    },
+    "node": {
+        "addLabels": [
+            "dep:nodejs"
+        ],
+        "enabled": true
+    },
+    "pre-commit": {
+        "addLabels": [
+            "dep:pre-commit"
+        ],
+        "enabled": true,
+        "automerge": true
+    },
+    "python": {
+        "addLabels": [
+            "dep:python"
+        ],
+        "enabled": true
+    },
+    "rust": {
+        "addLabels": [
+            "dep:rust"
+        ],
+        "enabled": true
+    },
+
+    "packageRules": [
+        {
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "matchCurrentVersion": "!/^0/",
+            "automerge": true
+        }
+    ],
+    "rangeStrategy": "bump",
+    "automergeType": "pr",
+    "dependencyDashboard": false,
+    "timezone": "America/Denver",
+    "schedule": [
+        "at any time"
+    ],
+    "extends": [
+        "config:base"
+    ]
+}
