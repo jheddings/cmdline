@@ -2,7 +2,7 @@
 
 BASEDIR ?= $(PWD)
 APPNAME ?= cmdline
-APPVER ?= 2.3
+APPVER ?= 2.4
 
 
 .PHONY: all
@@ -11,7 +11,8 @@ all: build
 
 .PHONY: buildx
 buildx:
-	docker buildx create --use --name $(APPNAME)-buildx
+	-docker buildx create --name $(APPNAME)-buildx
+	docker buildx use $(APPNAME)-buildx
 
 
 .PHONY: build
