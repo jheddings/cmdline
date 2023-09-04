@@ -2,7 +2,7 @@
 
 BASEDIR ?= $(PWD)
 APPNAME ?= cmdline
-APPVER ?= 2.5
+APPVER ?= 2.6
 
 
 .PHONY: all

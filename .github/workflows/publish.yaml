@@ -4,7 +4,7 @@ name: Publish latest image
 
 "on":
   push:
-    tags: ["v*.*.*"]
+    tags: ["v*.*"]
 
 jobs:
   docker-publish:
