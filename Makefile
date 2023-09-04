@@ -2,17 +2,11 @@
 
 BASEDIR ?= $(PWD)
 APPNAME ?= cmdline
-APPVER ?= 2.4
+APPVER ?= 2.5
 
 
 .PHONY: all
 all: build
-
-
-.PHONY: buildx
-buildx:
-	-docker buildx create --name $(APPNAME)-buildx
-	docker buildx use $(APPNAME)-buildx
 
 
 .PHONY: build
@@ -25,17 +19,8 @@ run: build
 	docker container run --rm --interactive --tty --volume "$$HOME":"/mnt/host/home" "$(APPNAME):dev"
 
 
-.PHONY: publish
-publish: build
-	docker buildx build --push \
-		--platform linux/amd64,linux/arm64 \
-		--tag "jheddings/$(APPNAME):$(APPVER)" \
-		--tag "jheddings/$(APPNAME):latest" \
-		"$(BASEDIR)"
-
-
 .PHONY: release
-release: publish
+release:
 	git tag "v$(APPVER)" main
 	git push origin "v$(APPVER)"
 
