@@ -1,6 +1,6 @@
-# publish a new image when a version tag is pushed to main
+# publish images to Docker Hub when a new tag is pushed to main
 ---
-name: Publish latest image
+name: Publish Docker images
 
 "on":
   push:
