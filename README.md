@@ -6,4 +6,4 @@ Simple example of an interactive shell running in a container.
 
 Pretty simple...  Build the container, run it interactively.
 
-    docker run --tty --rm --interactive cmdline
+    docker run --tty --rm --interactive jheddings/cmdline:latest
