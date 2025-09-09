@@ -20,7 +20,7 @@ run: build
 
 
 .PHONY: release
-release:
+release: build
 	git tag "v$(APPVER)" main
 	git push origin "v$(APPVER)"
 
