@@ -1,4 +1,4 @@
-FROM debian:trixie-20260610
+FROM debian:trixie-20260623
 
 # some additional packages that are handy...
 RUN apt-get update && \
